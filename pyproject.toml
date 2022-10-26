@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "tp-04"
+version = "0.1.0"
+description = ""
+authors = ["Geronimo Giovenale <geronimo.giovenale@devify.it>"]
+readme = "README.md"
+packages = [{include = "tp_04"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
