@@ -8,6 +8,7 @@ packages = [{include = "tp_04"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+python-ed-fcad-uner = {git = "https://github.com/nachonovello1984/python_ed_fcad_uner.git", rev = "main"}
 
 
 [build-system]
