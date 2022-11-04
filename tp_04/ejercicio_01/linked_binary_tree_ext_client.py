@@ -1,6 +1,5 @@
 from data_structures import BinaryTreeNode
 from linked_binary_tree_ext import LinkedBinaryTreeExt
-from io import UnsupportedOperation
 import unittest
 
 

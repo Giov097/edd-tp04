@@ -1,18 +1,18 @@
 from io import UnsupportedOperation
 import unittest
-from unsorted_priority_queue import UnsortedPriortyQueue
+from unsorted_priority_queue import UnsortedPriorityQueue
 
 
 class TestLinkedStackExt(unittest.TestCase):
 
     def test_empty(self):
-        queue = UnsortedPriortyQueue()
+        queue = UnsortedPriorityQueue()
         self.assertEqual(queue.is_empty(), True)
         queue.add(10, "Pochoclo")
         self.assertEqual(queue.is_empty(), False)
 
     def test_len(self):
-        queue = UnsortedPriortyQueue()
+        queue = UnsortedPriorityQueue()
         self.assertEqual(queue.__len__(), 0)
         queue.add(10, "Pochoclo")
         queue.add(7, "Puflito")
@@ -23,7 +23,7 @@ class TestLinkedStackExt(unittest.TestCase):
         self.assertEqual(queue.__len__(), 6)
 
     def test_min(self):
-        queue = UnsortedPriortyQueue()
+        queue = UnsortedPriorityQueue()
         queue.add(10, "Pochoclo")
         queue.add(7, "Puflito")
         queue.add(1, "Chizito")
@@ -33,7 +33,7 @@ class TestLinkedStackExt(unittest.TestCase):
         self.assertEqual(queue.min(), [1, "Chizito"])
 
     def test_remove_min(self):
-        queue = UnsortedPriortyQueue()
+        queue = UnsortedPriorityQueue()
         queue.add(10, "Pochoclo")
         queue.add(7, "Puflito")
         queue.add(1, "Chizito")
@@ -46,12 +46,12 @@ class TestLinkedStackExt(unittest.TestCase):
         self.assertEqual(queue.min(), [5, "Pizzito"])
 
     def test_min_exception(self):
-        queue = UnsortedPriortyQueue()
+        queue = UnsortedPriorityQueue()
         with self.assertRaises(UnsupportedOperation):
             queue.min()
 
     def test_remove_min_exception(self):
-        queue = UnsortedPriortyQueue()
+        queue = UnsortedPriorityQueue()
         with self.assertRaises(UnsupportedOperation):
             queue.remove_min()
 

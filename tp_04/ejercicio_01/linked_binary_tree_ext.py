@@ -1,4 +1,4 @@
-from typing import Any, List, Union
+from typing import Any, List
 from linked_binary_tree_ext_abstract import LinkedBinaryTreeExtAbstract
 from data_structures.trees.linked_binary_tree import LinkedBinaryTree
 from data_structures import BinaryTreeNode

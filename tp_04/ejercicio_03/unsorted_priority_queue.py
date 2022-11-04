@@ -1,11 +1,9 @@
 from io import UnsupportedOperation
-from operator import itemgetter
-from typing import Dict, Tuple, Any
-
-from unsorted_priority_queue_abstract import UnsortedPriorityQueueAbstract
+from typing import Tuple, Any
+from tp_04.ejercicio_03.unsorted_priority_queue_abstract  import UnsortedPriorityQueueAbstract
 
 
-class UnsortedPriortyQueue(UnsortedPriorityQueueAbstract):
+class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):
 
     def __init__(self):
         self.size = 0
@@ -18,17 +16,18 @@ class UnsortedPriortyQueue(UnsortedPriorityQueueAbstract):
         return self.size == 0
 
     def add(self, k: Any, v: Any) -> None:
-        self._queue.append([k,v])
+        self._queue.append([k, v])
         self.size += 1
 
     def min(self) -> Tuple[Any]:
         if self.is_empty():
             raise UnsupportedOperation()
-        return min(self._queue, key=lambda x:x[0])
+        return min(self._queue, key=lambda x: x[0])
 
     def remove_min(self) -> Tuple[Any]:
         if self.is_empty():
             raise UnsupportedOperation()
         removed = self.min()
         self._queue.remove(self.min())
+        self.size -= 1
         return removed
