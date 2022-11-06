@@ -38,6 +38,11 @@ class TestPQStack(unittest.TestCase):
         stack.pop()
         self.assertEqual(stack.peek(), 4)
 
+    def test_peek_exception(self):
+        stack = PriorityQueueStack()
+        with self.assertRaises(Exception):
+            stack.peek()
+
     def test_pop_ok(self):
         stack = PriorityQueueStack()
         stack.push(1)
@@ -49,6 +54,11 @@ class TestPQStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 4)
         stack.push(40)
         self.assertEqual(stack.pop(), 40)
+
+    def test_pop_exception(self):
+        stack = PriorityQueueStack()
+        with self.assertRaises(Exception):
+            stack.pop()
 
 
 if __name__ == '__main__':

@@ -1,6 +1,8 @@
 from io import UnsupportedOperation
 from typing import Tuple, Any
-from tp_04.ejercicio_03.unsorted_priority_queue_abstract  import UnsortedPriorityQueueAbstract
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+from tp_04.ejercicio_03.unsorted_priority_queue_abstract import UnsortedPriorityQueueAbstract
 
 
 class UnsortedPriorityQueue(UnsortedPriorityQueueAbstract):

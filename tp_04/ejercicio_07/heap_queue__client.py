@@ -1,17 +1,63 @@
+from io import UnsupportedOperation
 from heap_queue import HeapQueue
+import unittest
 
-heap_Queue = HeapQueue()
 
-heap_Queue.enqueue("1")
-heap_Queue.enqueue("2")
-heap_Queue.enqueue("3")
-heap_Queue.enqueue("4")
-heap_Queue.enqueue("5")
+class HeapQueueClient(unittest.TestCase):
 
-print(heap_Queue.__len__())
+    def test_empty_ok(self):
+        heap_queue = HeapQueue()
+        self.assertEqual(heap_queue.is_empty(), True)
+        heap_queue.enqueue(1)
+        self.assertEqual(heap_queue.is_empty(), False)
+        heap_queue.dequeue()
+        self.assertEqual(heap_queue.is_empty(), True)
 
-print(heap_Queue.is_empty())
+    def test_len_ok(self):
+        heap_queue = HeapQueue()
+        heap_queue.enqueue("1")
+        heap_queue.enqueue("2")
+        heap_queue.enqueue("3")
+        heap_queue.enqueue("4")
+        heap_queue.enqueue("5")
+        self.assertEqual(heap_queue.__len__(), 5)
 
-print(heap_Queue.first())
+    def test_peek_ok(self):
+        heap_queue = HeapQueue()
+        heap_queue.enqueue(1)
+        self.assertEqual(heap_queue.peek(), 1)
+        heap_queue.enqueue(2)
+        heap_queue.enqueue(3)
+        heap_queue.enqueue(4)
+        heap_queue.enqueue(5)
+        self.assertEqual(heap_queue.peek(), 1)
+        heap_queue.dequeue()
+        heap_queue.dequeue()
+        self.assertEqual(heap_queue.peek(), 3)
 
-print(heap_Queue.dequeue())
+    def test_peek_exception(self):
+        heap_queue = HeapQueue()
+        with self.assertRaises(Exception):
+            heap_queue.peek()
+
+    def test_dequeue_ok(self):
+        heap_queue = HeapQueue()
+        heap_queue.enqueue(1)
+        heap_queue.enqueue(2)
+        heap_queue.enqueue(3)
+        self.assertEqual(heap_queue.dequeue(), 1)
+        self.assertEqual(heap_queue.dequeue(), 2)
+        heap_queue.enqueue(4)
+        heap_queue.enqueue(5)
+        self.assertEqual(heap_queue.dequeue(), 3)
+        self.assertEqual(heap_queue.dequeue(), 4)
+        self.assertEqual(heap_queue.dequeue(), 5)
+
+    def test_dequeue_exception(self):
+        heap_queue = HeapQueue()
+        with self.assertRaises(Exception):
+            heap_queue.dequeue()
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -33,10 +33,10 @@ class TestLinkedStackExt(unittest.TestCase):
         self.assertEqual(self.arbol.hermanos(self.nodo_b, self.nodo_f), True)
 
     def test_hojas(self):
-        self.assertEqual(self.arbol.hojas(), "['C', 'D', 'H', 'I', 'M', 'N']")
+        self.assertEqual(self.arbol.hojas(), ['C', 'D', 'H', 'I', 'M', 'N'])
 
     def test_internos(self):
-        self.assertEqual(self.arbol.internos(), "['B', 'F', 'G', 'K']")
+        self.assertEqual(self.arbol.internos(), ['B', 'F', 'G', 'K'])
 
     def test_profundidad(self):
         self.assertEqual(self.arbol.profundidad(self.nodo_g), 2)
